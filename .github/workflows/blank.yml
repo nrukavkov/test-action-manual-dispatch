@@ -18,6 +18,7 @@ on:
 jobs:
   printInputs:
     runs-on: ubuntu-latest
+    if: github.event.inputs.tags
     steps:
     - run: echo "github.event_name = ${{ github.event_name }}"
     - run: echo "github.event.action = ${{ github.event.action }}"
