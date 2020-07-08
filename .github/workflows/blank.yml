@@ -19,6 +19,8 @@ jobs:
   printInputs:
     runs-on: ubuntu-latest
     steps:
+    - run: echo "github.event_name = ${{ github.event_name }}"
+    - run: echo "github.event.action = ${{ github.event.action }}"
     - run: |
         echo "Log level: ${{ join(github.event.*.logLevel) }}"
         echo "Tags: ${{ join(github.event.*.tags) }}"
